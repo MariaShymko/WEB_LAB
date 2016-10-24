@@ -1,0 +1,27 @@
+﻿<?php
+$I = new AcceptanceTester($scenario);
+$I->wantTo('create page');
+$I->amOnPage('/backend/backend/auth/signin');
+$I->click('.form-control.width-1.icon.user'); 
+$I->fillField("//input[ * type='text']",  "elena");
+$I->click('.form-control.width-1.icon.lock');
+$I->fillField("//input[ * type='password']",  "123123");
+$I->click('.btn.btn-primary.login-button');
+$I->click('.nav-label');
+$I->click('.btn.btn-default.oc-icon-plus.last'); 
+$I->click('.form-control');
+$I->fillField("//input[ * type='text']",  "name");
+$I->click('.__web-inspector-hide-shortcut__');				
+$I->fillField("//input[ * type='text']",  "namename");
+$I->click('.title');
+$I->click('.form-control');
+$I->fillField("//input[ * type='text']",  "namenamename");
+$I->click('.form-control field-textarea size-tiny');
+$I->fillField("//input[ * type='text']",  "namename2");
+$I->click('.btn.btn-primary.oc-icon-check.save');
+
+
+$I->see('.expand');
+$I->click('.expand');
+$I->see('Sign Up', '.form-control');   "name"
+
