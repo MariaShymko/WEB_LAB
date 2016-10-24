@@ -14,11 +14,7 @@ $I->haveInDatabase('lovata_buddies_users', array(
 $I->haveInDatabase('lovata_buddies_category', array(
 'id' => 'F1.TV', 
 'name' => 'Профессиональная вертикаль'));
-$I->amOnPage('/backend');
-$I->fillField('.form-control.width-1.icon.user', 'katya');
-$I->fillField('.form-control.width-1.icon.lock', '123123');
-$I->click('.btn.btn-primary.login-button');
-$I->waitForElement('.icon-trophy');
+$I->loginAsManager();
 $I->click('.icon-trophy');
 $I->waitForElement('Mydog');
 $I->click('Mydog');
@@ -26,4 +22,5 @@ $I->waitForElement('#Form-field-Work-name');
 $I->fillField('#Form-field-Work-name', 'Mycat');
 $I->click('.btn.btn-default');
 $I->waitForElement('.flash-message.fade.success.in');
-$I->see('.flash-message.fade.success.in');
+$I->see('Работа успешно обновлена', '.flash.message.fade.success.in');
+$I->seeInDatabase('lovata_contest_works', array( 'name' => 'Mycat' , 'category_id' => '1'));
