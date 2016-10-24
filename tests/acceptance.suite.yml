@@ -5,17 +5,17 @@
 # If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
 class_name: AcceptanceTester
-    modules:
-       enabled:
-          - WebDriver:
-             url: 'http://localhost/'
-             browser: firefox
-          - Db:
-             dsn: 'mysql:host=localhost;dbname=testdb'
-             user: 'root'
-             password: '123123'
-             dump: 'tests/_data/dump.sql'
-             populate: true
-             cleanup: false
-             reconnect: true
-          - \Helper\Acceptance
+modules:
+    enabled:
+        - WebDriver:
+           url: 'http://localhost/'
+           browser: firefox
+        - Db:
+           dsn: 'mysql:host=localhost;dbname=testdb'
+           user: 'root'
+           password: '123123'
+           dump: 'tests/_data/dump.sql'
+           populate: true
+           cleanup: false
+           reconnect: true
+        - \Helper\Acceptance
