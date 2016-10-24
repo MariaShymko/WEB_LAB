@@ -1,0 +1,18 @@
+﻿<?php
+$I = new AcceptanceTester($scenario);
+$I->wantTo('delete page');
+$I->amOnPage('/backend/backend/auth/signin');
+$I->fillField('.form-control.width-1.icon.user',  "elena");
+$I->fillField('.form-control.width-1.icon.lock',  "123123");
+$I->click('.btn.btn-primary.login-button');
+$I->click('.nav-label');
+$I->click('.expand');
+$I->click('.checkbox.custom-checkbox.nolabel');
+$I->click('.btn btn-default empty oc-icon-trash-o');	
+
+
+$I->dontSee('Sign Up','.expand');   "name1"
+
+
+
+

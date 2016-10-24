@@ -1,0 +1,16 @@
+﻿<?php
+$I = new AcceptanceTester($scenario);
+$I->wantTo('edit page');
+$I->amOnPage('/backend/backend/auth/signin');
+$I->fillField('.form-control.width-1.icon.user',  "elena");
+$I->fillField('.form-control.width-1.icon.lock',  "123123");
+$I->click('.btn.btn-primary.login-button');
+$I->click('.nav-label');
+$I->click('.expand');
+$I->fillField('.form-control',  "name1");
+$I->click('.btn btn-primary oc-icon-check save');
+
+$I->see('.expand');
+$I->click('.expand');
+$I->see('name1', '.form-control');  
+
