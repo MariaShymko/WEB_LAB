@@ -1,0 +1,18 @@
+<?php
+$I = new AcceptanceTester($scenario);
+$I->wantTo('edit partner');
+$I->amOnPage('/backend/backend/auth/signin');
+$I->fillField(".form-control width-1 icon user",  "elena");
+$I->fillField('.form-control.width-1.icon.lock',  "123123");
+$I->click('.btn.btn-primary.login-button');
+$I->click('.nav-label');
+$I->click('.icon-users');
+$I->click('.list-cell-index-1 list-cell-name-name list-cell-type-text  ');
+$I->fillField('.form-control',  "name1");
+$I->click('.btn btn-primary');
+
+$I->see('.list-cell-index-1 list-cell-name-name list-cell-type-text  ');
+$I->click('.list-cell-index-1 list-cell-name-name list-cell-type-text  ');
+$I->see('name1', '.form-control');
+
+
