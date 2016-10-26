@@ -4,10 +4,10 @@ $I = new AcceptanceTester($scenario);
 $I->wantTo('verify possibility of creating application by private person');
 $I->haveInDatabase('lovata_contest_works', array (
      'name'=>'Name1',
-	 'product'=>'Product1',
-	 'created_at'=>'2016-10-20 18:40:00'
-	 'updated_at'=>'2016-10-20 18:40:00' 
-	 'on_site'=>'1');	 
+     'product'=>'Product1',
+     'created_at'=>'2016-10-20 18:40:00',
+	 'updated_at'=>'2016-10-20 18:40:00',
+     'on_site'=>'1');	 
 $I->haveInDatabase('lovata_buddies_category', array ('name'=>'Профессиональная вертикаль',);
 $I->loginAsUser();
 $I->click('.invite-promo__participatebtn._action');
