@@ -1,4 +1,6 @@
 <?php 
+use Step\Acceptance\Admin as AdminTester;
+
 $I = new AcceptanceTester($scenario);
 $I->wantTo('change the name of work in backend and save it');
 $I->haveInDatabase('lovata_contest_works', array(
