@@ -1,14 +1,12 @@
 <?php 
+use Step\Acceptance\Admin as AdminTester;
 $I = new AcceptanceTester($scenario);
 $I->wantTo('Create a category in the administrative partCept');
-$I->amOnPage('backend/backend/auth/signin');//Открываем страницу для авторизации на админке
-$I->fillField('.form-control.width-1.icon.user','natalia');//Вводим логин
-$I->fillField('.form-control.width-1.icon.lock','123123');//Вводим пароль
-$I->click('.btn.btn-primary.login-button');//Нажимаем войти
+$I->loginAsManager();
 $I->waitForElement('.layout.control-tabs.master-tabs.fancy-layout.oc-logo-transparent',30);
 $I->click('ul.nav:nth-child(2) > li:nth-child(5) > a:nth-child(1)');//Нажимаем Конкурс в верхнем меню
-$I->waitForElementNotVisible('//*[@id="layout-sidenav"]/ul/li[3]/a');
-$I->waitForElementVisible('//*[@id="layout-sidenav"]/ul/li[3]/a');
+$I->waitForElementNotVisible('li.active:nth-child(3) > a:nth-child(1)');
+$I->waitForElementVisible('li.active:nth-child(3) > a:nth-child(1)');
 $I->click('li.active:nth-child(3) > a:nth-child(1)');//Нажимаем Категории в боковом меню
 $I->waitForElementNotVisible('.btn.btn-primary.oc-icon-plus');
 $I->waitForElementVisible('.btn.btn-primary.oc-icon-plus');
