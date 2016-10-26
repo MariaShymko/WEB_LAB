@@ -2,17 +2,17 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('change the name of work in backend and save it');
 $I->haveInDatabase('lovata_contest_works', array(
-'user_id' => '51', 
+'user_id' => '1', 
 'name' => 'Mydog',
-'category_id' => 'F1.TV', 
-'created_at' => '20:36 20 oct 2016',
-'updated_at' => '20:36 20 oct 2016'));
+'category_id' => '67', 
+'created_at' => '2016-10-20 20:36',
+'updated_at' => '2016-10-20 20:36'));
 $I->haveInDatabase('lovata_buddies_users', array(
-'user_id' => '51', 
-'email' => 'andy@mail.ru'
+'user_id' => '1', 
+'email' => 'codeception@mail.ru'
 'password' => '123123'));
 $I->haveInDatabase('lovata_buddies_category', array(
-'id' => 'F1.TV', 
+'id' => '67', 
 'name' => 'Профессиональная вертикаль'));
 $I->loginAsManager();
 $I->click('.icon-trophy');
