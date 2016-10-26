@@ -1,0 +1,19 @@
+<?php
+$I = new AcceptanceTester($scenario);
+$I->wantTo('create logo');
+$I->amOnPage('/backend/backend/auth/signin');
+$I->fillField(".form-control width-1 icon user",  "elena");
+$I->fillField('.form-control.width-1.icon.lock',  "123123");
+$I->click('.btn.btn-primary.login-button');
+$I->click('.nav-label');
+$I->click('.icon-users');
+$I->click('.btn btn-primary oc-icon-plus');
+$I->fillField('.form-control',  "name");
+$I->waitForElement('.upload-button-icon oc-icon-upload');
+>>>>>>>  // картинка  <a href="http://vfl.ru/fotos/6133ab1614674245.html"><img src="//images.vfl.ru/ii/1477477644/6133ab16/14674245_m.jpg" alt="13-Собака породы вельш-корги пемброк" title="13-Собака породы вельш-корги пемброк" border="0"></a>
+$I->click('icon-container image'); // картинка
+$I->click('.btn btn-primary');
+
+$I->see('.list-cell-index-1 list-cell-name-name list-cell-type-text   ');
+$I->click('.list-cell-index-1 list-cell-name-name list-cell-type-text  ');
+$I->see('name', '.form-control');   

@@ -11,7 +11,7 @@ $I->click('.checkbox.custom-checkbox.nolabel');
 $I->click('.btn btn-default empty oc-icon-trash-o');	
 
 
-$I->dontSee('Sign Up','.expand');   "name1"
+$I->dontSee('name1','.expand');  
 
 
 
