@@ -1,5 +1,5 @@
 <?php 
-use Step\Acceptance\Admin as AdminTester;
+use Step\Acceptance\Login as AcceptanceTester;
 $I = new AcceptanceTester($scenario);
 $I->wantTo('verify possibility of creating application by private person');
 $I->haveInDatabase('lovata_contest_works', array (
@@ -16,7 +16,7 @@ $I->selectOption('.addwork-contest__select', 'Film');
 $I->selectOption('.b-popup-addwork__radio-label', 'F1');
 $I->fillField('#name_work', 'Name3');
 $I->fillField('#adv_prod', 'Product3');
-$I->selectOption('typecompany__radio-label','Рекламное агенство);
+$I->selectOption('typecompany__radio-label','Рекламное агенство');
 $I->fillField('#agency','Agency3');
 $I->fillField('#customer','Customer3');
 $I->fillField('#idea','Idea3');
@@ -27,5 +27,3 @@ $I->click('.login-nav__link');
 $I->see('.container-page');
 $I->see('.work__title', 'Name3');
 $I->see('.work__product', 'Product3'));
-
-
