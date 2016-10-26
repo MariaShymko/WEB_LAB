@@ -1,10 +1,10 @@
 ﻿<?php
-$I = new AcceptanceTester($scenario);
-$I->wantTo('create page');
-$I->amOnPage('/backend/backend/auth/signin');
-$I->fillField(".form-control width-1 icon user",  "elena");
-$I->fillField('.form-control.width-1.icon.lock',  "123123");
-$I->click('.btn.btn-primary.login-button');
+
+use Step\Acceptance\Login as AcceptanceTester;
+$I = new AcceptanceTester ($scenario);
+$I->wantTo ('create page');
+$I->loginAsManager ();
+
 $I->click('.nav-label');
 $I->click('.btn.btn-default.oc-icon-plus.last'); 
 $I->fillField('.form-control',  "name");	
