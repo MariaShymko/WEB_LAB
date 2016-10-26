@@ -6,16 +6,15 @@
 
 class_name: AcceptanceTester
 modules:
-    enabled:
-        - WebDriver:
-           url: 'http://localhost/'
-           browser: firefox
-        - Db:
-           dsn: 'mysql:host=localhost;dbname=testdb'
-           user: 'root'
-           password: '123123'
-           dump: 'tests/_data/dump.sql'
-           populate: true
-           cleanup: false
-           reconnect: true
-        - \Helper\Acceptance
+       enabled:
+          - WebDriver:
+             url: 'http://test.lama.by.dev.lovata.com/'
+             browser: firefox
+          - Db:
+             dsn: 'mysql:host=185.47.152.168;dbname=lama_log'
+             user: 'root'
+             password: '123123'
+             dump: 'tests/_data/dump.sql'
+             populate: true
+             cleanup: false
+             reconnect: false

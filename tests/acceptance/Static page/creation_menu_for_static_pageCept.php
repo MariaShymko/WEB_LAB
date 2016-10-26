@@ -1,10 +1,9 @@
 <?php 
+use Step\Acceptance\Login as AcceptanceTester;
 $I = new AcceptanceTester($scenario);
 $I->wantTo('perform actions and see result');
-$I->amOnPage('/backend');
-$I->fillField('.form-control.width-1.icon.user','olga');
-$I->fillField('.form-control.width-1.icon.lock','123123');
-$I->click('.btn.btn-primary.login-button');
+$I = $this;
+$I = loginAsManager();
 $I->waitForElement('#layout-sidenav li:nth-child(2)', 7);
 //$I->click('.nav-label');
 $I->click('#layout-sidenav li:nth-child(2) span');
