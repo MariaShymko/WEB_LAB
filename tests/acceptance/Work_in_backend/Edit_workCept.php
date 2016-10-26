@@ -3,19 +3,14 @@ use Step\Acceptance\Login as AcceptanceTester;
 
 $I = new AcceptanceTester($scenario);
 $I->wantTo('change the name of work in backend and save it');
-$I->haveInDatabase('lovata_contest_works', array(
-'user_id' => '1', 
-'name' => 'Mydog',
-'category_id' => '67', 
-'created_at' => '2016-10-20 20:36',
-'updated_at' => '2016-10-20 20:36'));
-$I->haveInDatabase('lovata_buddies_users', array(
-'user_id' => '1', 
-'email' => 'codeception@mail.ru'
-'password' => '123123'));
 $I->haveInDatabase('lovata_buddies_category', array(
-'id' => '67', 
-'name' => 'Профессиональная вертикаль'));
+	'name' => 'Профессиональная вертикаль'));
+$I->haveInDatabase('lovata_contest_works', array(
+	'user_id' => '1', 
+	'name' => 'Mydog',
+	'category_id' => '1', 
+	'created_at' => '2016-10-20 20:36',
+	'updated_at' => '2016-10-20 20:36'));
 $I->loginAsManager();
 $I->click('.icon-trophy');
 $I->waitForElement('Mydog');
