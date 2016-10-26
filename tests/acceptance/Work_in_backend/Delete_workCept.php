@@ -1,5 +1,5 @@
 <?php 
-use Step\Acceptance\Admin as AdminTester;
+use Step\Acceptance\Login as AcceptanceTester;
 
 $I = new AcceptanceTester($scenario);
 $I->wantTo('delete the work in backend');
