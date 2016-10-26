@@ -1,5 +1,5 @@
 <?php 
-use Step\Acceptance\AcceptanceTester;
+use Step\Acceptance\Login as AcceptanceTester;
 $I = new AcceptanceTester($scenario);
 $I->wantTo('verify possibility of creating application by private person');
 $I->haveInDatabase('lovata_contest_works', array (
