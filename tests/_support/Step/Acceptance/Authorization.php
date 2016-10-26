@@ -25,7 +25,7 @@ class Admin extends \AcceptanceTester
     {
         $I = $this;
         $I->amOnPage('/');
-        $I->fillField('.auth-block__field-email.js-validEmail.js-validRequired', 'codeception');
+        $I->fillField('.auth-block__field-email.js-validEmail.js-validRequired', 'codeception@mail.ru');
         $I->fillField('.auth-block__field-password.js-validRequired', '123123');
         $I->click('.auth_button.js-submitBtn');
 		$I->waitForElement('.icon-newspaper-o');
