@@ -3,7 +3,7 @@ namespace Step\Acceptance;
 
 class Loigin extends \AcceptanceTester
 {
-	//
+	//backend_authorization
     public function loginAsManager()
     {
         $I = $this;
@@ -14,7 +14,7 @@ class Loigin extends \AcceptanceTester
         $I->waitForElement('.icon-newspaper-o');
     }
 	
-	//
+	//frontend_authorization
 	public function loginAsUser()
     {
         $I = $this;
