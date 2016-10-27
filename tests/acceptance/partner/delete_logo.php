@@ -17,4 +17,4 @@ $I->click('.btn.btn-primary');
 $I->see('.list-cell-index-1.list-cell-name-name.list-cell-type-text   ');
 $I->click('.list-cell-index-1.list-cell-name-name.list-cell-type-text  ');
 $I->see('name', '.form-control');   
-$I->dontSee('dog2.jpg','.upload-button-icon.oc-icon-upload');  
+$I->dontSee('.icon-container image','.upload-button-icon.oc-icon-upload');  
